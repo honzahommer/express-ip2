@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- node
+- '8'
+- '10'
+sudo: false
+cache:
+  directories:
+  - node_modules
+deploy:
+  node_js: 8
+  provider: npm
+  skip_cleanup: true
+  email: honza@hommer.cz
+  api_key:
+    secure: O5P0zQuqH8E0jvqsSU4vGegupuCUKqpzeNelBdcGAdbqJ+fgBqfKANU844OQQ8qOwzRdU715N2HGw9tijY6VWVuMo0oDJhiqqwZNH55wsZ/7K4D5v556Mz8VwDhmZVF2yYrJrHhaiAtU5wL5eFSV5Ij9BIJbQ0kzDKlmzZmKVESMsqgAFvVyyGLCJqqxTlashwpgkH4N/lSJpvleILMkJMox1Cd+/Z5f9lk/hWMG47tA02/ff2TV6aCk1rx+mJtK78G02p22C8TJ/IEGBrQFJkE+gs9gqhc1R7bM4ccqpYyAYRQs5/lLREUvc5BTIgPIQMKe/FS5HhCe09s2DrX1TipJVxmjpVaDIRSSIwUMqX6cucsED1weVuVjqoopAjZPiFhQIiWi70uBY0xC1a3mgPDY2YODOWNzTfwczzvEr+YQYkG/zCShIc4cP5XRsePawrrlajZh7odS8Phzyb69V21pQ5Q3meOIXccNXSaqiF7+XT+P/n8t3c4nBfy6iDhYDDvcCPZpSuE175SwRIaIZPPRhsBrBkQ8+UFW3B6LdLUIE2Mbho9iMVyT6e5TuMNRJFMwyAqRFAGQuEAEHEbeuXEKgQKPZRrZUa5WFgOW/wd9SFyMdyf1QMz9xJ400XKq1c48IrG8pkx/CxXHPtdpxbulb3z3p/TlRf5resHTJps=
+  on:
+    tags: true
+    repo: honzahommer/express-ip2

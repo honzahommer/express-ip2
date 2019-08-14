@@ -1,0 +1,53 @@
+{
+  "name": "express-ip2",
+  "description": "Express IP2 geolocation middleware",
+  "version": "0.0.0",
+  "main": "lib/ip2.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "release:patch": "npm version patch -m \"v%s\" && npm publish",
+    "release:minor": "npm version minor -m \"v%s\" && npm publish",
+    "release:major": "npm version major -m \"v%s\" && npm publish",
+    "publish": "git push origin --tags && npm run changelog && git push origin",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -m \"[skip ci] chore: updating changelog\"",
+    "lint": "semistandard \"lib/**/*.js\" --fix",
+    "mocha": "mocha ./test/*.test.js",
+    "test": "npm run lint && nyc npm run mocha",
+    "start": "node lib/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/honzahommer/express-ip2.git"
+  },
+  "author": "Honza Hommer <honza@hommer.cz>",
+  "homepage": "https://github.com/honzahommer/express-ip2#README",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "dependencies": {
+    "@ip2.bin/db5lite": "^1.0.1",
+    "ip2location-nodejs": "^8.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "husky": "^3.0.3",
+    "mocha": "^6.2.0",
+    "node-mocks-http": "^1.7.6",
+    "nyc": "^14.1.1",
+    "semistandard": "^13.0.1"
+  }
+}
