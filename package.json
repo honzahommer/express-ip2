@@ -1,7 +1,7 @@
 {
   "name": "express-ip2",
   "description": "Express IP2 geolocation middleware",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/ip2.js",
   "directories": {
     "lib": "lib",
